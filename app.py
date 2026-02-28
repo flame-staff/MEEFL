@@ -7,7 +7,8 @@ from flask_session import Session
 from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
-admin = os.getenv("USERNAME") 
+admin = os.getenv("USERNAME")
+admin_pword = os.getenv("PASSWORD")
 
 
 app = flask.Flask(__name__)
