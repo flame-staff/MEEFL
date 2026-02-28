@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modify</title>
+    </head>
+    <body>
+        <form method="POST">
+            <p>Which friend would you like to edit?</p>
+            <select name="friend">
+                <option value="" selected="selected">Please Select</option>
+                {% for friend in friends %}
+                <option value="{{ friend }}">{{ friend }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        
+        <h3><a href="{{ url_for('index') }}">Back</a></h3>
+    </body>
+</html>

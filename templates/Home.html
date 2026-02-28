@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Home Page
+		</title>
+<<<<<<< HEAD
+		<link rel="stylesheet" href="../static/Home.css">
+	</head>
+	<body>
+		<h1>Welcome {{ user }}! <br>What would you like to do today?</h1><br>
+		<!-- <p>Your password is {{ Pword }}</p> -->
+		<h2><a href="{{ url_for('database') }}">Your friend Library</a></h2>
+		<h2><a href="{{ url_for('mod_data') }}">Modify data</a></h2>
+		<h2><a href="{{ url_for('add_data') }}">Add data</a></h2>
+		<h2><a href="{{ url_for('delete_data') }}">Delete data</a></h2>		
+		<img id="run" src="{{ url_for('get_img', filename='Oguri Cap Animation no bg running right.gif') }}" alt="Oguri Cap running">
+		
+		<script>
+			let rightLimit = window.innerWidth;
+			console.log("Right limit (pixels):", rightLimit);
+
+			const image = document.getElementById("run");
+
+			// Define the keyframes and options
+			let keyframes = [
+				{ transform: 'translateX(0px)' }, // Start position
+				{ transform: `translateX(${rightLimit}px)` } // End position
+			];
+
+			const options = {
+				duration: 5000, // Animation duration in milliseconds (2 seconds)
+				iterations: Infinity, // Loop the animation
+				easing: 'Linear' 
+			};
+
+			// Apply the animation
+			image.animate(keyframes, options);
+
+			window.addEventListener('resize', () => {
+				rightLimit = window.innerWidth;
+			
+			
+				// Define the keyframes and options
+				keyframes = [
+					{ transform: 'translateX(0px)' }, // Start position
+					{ transform: `translateX(${rightLimit}px)` } // End position
+				];
+
+				// Apply the animation
+				image.animate(keyframes, options);
+
+			})
+    </script>
+=======
+	</head>
+	<body>
+		<h1>Welcome {{ user }}</h1><br>
+		<!-- <p>Your password is {{ Pword }}</p> -->
+		<h2><a href="{{ url_for('database') }}">Your friend Library</a></h2>
+		<h2><a href="{{ url_for('add_data') }}">Add data</a></h2>
+>>>>>>> deaa79f0bf1615904614335876f40845ffd3295f
+	</body>
+</html>
+		
+		

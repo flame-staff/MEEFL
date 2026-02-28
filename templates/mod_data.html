@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modify</title>
+    </head>
+    <body>
+        <form method="POST">
+            <fieldset>
+                <p>Which friend would you like to edit?</p>
+                <select name="friend">
+                    <option value="" selected="selected">Please Select</option>
+                    {% for friend in friends %}
+                    <option value="{{ friend[0] }}">{{ friend[0] }}</option>
+                    {% endfor %}
+                </select>
+                <p>Which Field do you want to Modify</p>
+                <select id="selection" name="field">
+                    <option value="" selected="selected">Please Select</option>
+                    <option value="Name">Name</option>
+                    <option value="DOB">DOB</option>
+                    <option value="Likes">Likes</option>
+                    <option value="Educational_bg">Educational_bg</option>
+                    <option value="How we met">How we met</option>
+                </select>
+                <!-- Using JS, the <p> below cycles according to the field selected -->
+                <p id="var_field"></p>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Add a back button -->
+        <h3><a href="{{ url_for('index') }}">Back</a></h3>
+        
+
+        <script>
+            const selected = document.getElementById("selection");
+            selected.addEventListener("change", change_field)
+
+            function change_field() {
+                const selected_value = selected.value
+                if (selected_value == "How we met") {
+                    document.getElementById("var_field").innerHTML = "Insert new data: <input type='textarea' name='u_input'>"
+                } else if (selected_value == "Educational_bg") {
+                    document.getElementById("var_field").innerHTML = "Insert new data:<br><textarea name='u_input' rows='4' cols='50'>Follow the structure Primary->Secondary->Poly/JC->University" // Placeholder
+                } else {
+                    document.getElementById("var_field").innerHTML = "Insert new data: <input type='text' name='u_input'>"
+                }
+            }
+        </script>
+
+    </body>
+</html>

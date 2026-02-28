@@ -1,6 +1,6 @@
 class Friend:
     
-    def __init__ (self, name = '', birthday = -1, edu_bg, how_meet = '', likes = [], dislikes = [], hobbies = [], add_info = [], rs = '', CAA = -1):
+    def __init__ (self, name = '', birthday = -1, edu_bg = None, how_meet = '', likes = [], dislikes = [], hobbies = [], add_info = [], rs = '', CAA = -1):
         self.name = name
         self.birthday = birthday
         self.edu_bg = e_i()
@@ -56,6 +56,11 @@ class Friend:
         elif attr.lower() == "caa":
             return "CAA:",self.caa
         
+# Placeholder for e_i as im damn lazy to figure out LL rn
+def e_i():
+    return True
+
+'''
 class educational_institute as e_i:
     
     def __init__ (self,sch,years_studied,nxt_sch):
@@ -71,7 +76,6 @@ class educational_institute as e_i:
         
     def nxt_change (self,pointer):
         self.nxt_sch = pointer
-        
-    
-        
+'''
 
+print("Hello")

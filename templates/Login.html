@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Login
+		</title>
+	</head>
+	<body>
+		{% if invalid %}
+			<p>Wrong username or password</p>
+		{% endif %}
+		<!-- redirect form to menu page -->
+		<form method="post">
+			<p>Username: <input type="text" id="user" name="user"></p>
+			<!-- Add a function to toggle password visibility -->
+			<p>Password: <input type="Password" id="Pword" name="Pword"></p><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

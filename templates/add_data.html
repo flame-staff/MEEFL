@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<<<<<<< HEAD
+        <title>Add</title>
+=======
+        <title>Modify</title>
+>>>>>>> deaa79f0bf1615904614335876f40845ffd3295f
+    </head>
+    <body>
+        <form method="POST">
+            <fieldset>
+<<<<<<< HEAD
+                <p>Enter new Friend details:</p>
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="Name"></td>
+                    </tr>
+                    <tr>
+                        <td>DOB</td>
+                        <td><input type="text" name="DOB"></td>
+                    </tr>
+                    <tr>
+                        <td>Educational_bg</td>
+                        <td><textarea name='Educational_bg' placeholder="Follow the structure Primary->Secondary->Poly/JC->University" rows='4' cols='50'></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>How we met</td>
+                        <td><input type="text" name="Meet"></td>
+                    </tr>
+                    <tr>
+                        <td>Likes</td>
+                        <td><input type="text" name="Likes"></td>
+                    </tr>
+                    <tr>
+                        <td>Dislikes</td>
+                        <td><input type="text" name="Dislikes"></td>
+                    </tr>
+                    <tr>
+                        <td>Hobbies</td>
+                        <td><input type="text" name="Hobbies"></td>
+                    </tr>
+                    <tr>
+                        <td>Additional Info</td>
+                        <td><textarea name='Add_info' rows='4' cols='50'></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Relationship</td>
+                        <td><input type="text" name="Relationship"></td>
+                    </tr>
+                    <tr>
+                        <td>CAA</td>
+                        <td><input type="text" name="CAA"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <input type="submit" name="Submit" value="Submit">
+        </form>
+
+       <h3><a href="{{ url_for('index') }}">Back</a></h3>
+=======
+                <p>Which friend would you like to edit?</p>
+                <select name="friend">
+                    <option value="" selected="selected">Please Select</option>
+                    {% for friend in friends %}
+                    <option value="{{ friend[0] }}">{{ friend[0] }}</option>
+                    {% endfor %}
+                </select>
+                <p>Which Field do you want to Modify</p>
+                <select id="selection" name="field">
+                    <option value="" selected="selected">Please Select</option>
+                    <option value="Name">Name</option>
+                    <option value="DOB">DOB</option>
+                    <option value="Likes">Likes</option>
+                    <option value="Educational_bg">Educational_bg</option>
+                    <option value="How we met">How we met</option>
+                </select>
+                <!-- Ideally I want the input to vary according to the field selected, but it seems i need to learn JS-->
+                <p id="var_field"></p>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            const selected = document.getElementById("selection");
+            selected.addEventListener("change", change_field)
+
+            function change_field() {
+                const selected_value = selected.value
+                if (selected_value == "How we met") {
+                    document.getElementById("var_field").innerHTML = "Insert new data: <input type='textarea' name='u_input'>"
+                } else if (selected_value == "Educational_bg") {
+                    document.getElementById("var_field").innerHTML = "Insert new data:<br><textarea name='u_input' rows='4' cols='50'>Follow the structure Primary->Secondary->Poly/JC->University" // Placeholder
+                } else {
+                    document.getElementById("var_field").innerHTML = "Insert new data: <input type='text' name='u_input'>"
+                }
+            }
+        </script>
+
+    </body>
+</html>
+>>>>>>> deaa79f0bf1615904614335876f40845ffd3295f
