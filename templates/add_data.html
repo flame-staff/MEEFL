@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-<<<<<<< HEAD
         <title>Add</title>
-=======
-        <title>Modify</title>
->>>>>>> deaa79f0bf1615904614335876f40845ffd3295f
     </head>
     <body>
         <form method="POST">
             <fieldset>
-<<<<<<< HEAD
                 <p>Enter new Friend details:</p>
                 <table>
                     <tr>
@@ -59,10 +54,7 @@
                 </table>
             </fieldset>
             <input type="submit" name="Submit" value="Submit">
-        </form>
-
-       <h3><a href="{{ url_for('index') }}">Back</a></h3>
-=======
+            </form>
                 <p>Which friend would you like to edit?</p>
                 <select name="friend">
                     <option value="" selected="selected">Please Select</option>
@@ -85,6 +77,8 @@
             <input type="submit" value="Submit">
         </form>
 
+        <h3><a href="{{ url_for('index') }}">Back</a></h3>
+
         <script>
             const selected = document.getElementById("selection");
             selected.addEventListener("change", change_field)
@@ -103,4 +97,3 @@
 
     </body>
 </html>
->>>>>>> deaa79f0bf1615904614335876f40845ffd3295f
